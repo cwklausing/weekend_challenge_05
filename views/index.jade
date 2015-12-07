@@ -1,19 +1,24 @@
 extends layout
 
 block content
-  h1 Rando Corp
-  h3.admin Admin Access
-  p Welcome to #{title}
-  form
-    input(type='text' name='firstName' placeholder='First')
-    input(type='text' name='lastName' placeholder='Last')
-    input(type='text' name='desiredJob' placeholder='Desired Job')
-    input(class='remote' type='checkbox' name='remote' value='remote')
-    p I prefer to work remotely
-    input(type='text' name='city' placeholder='City')
-    input(type='text' name='state' placeholder='State')
-    input(type='submit' value='submit')
-  p.success
+  div.left
+    h1 Rando Corp
+    p Welcome to #{title}
+    form
+      input(type='text' name='firstName' placeholder='First')
+      input(type='text' name='lastName' placeholder='Last')
+      input(type='text' name='desiredJob' placeholder='Desired Job')
+      p I prefer to work remotely:
+      input(class='remote' type='radio' name='remote' value='yes')
+      label yes
+      input(class='remote' type='radio' name='remote' value='no')
+      label no
+      input(type='text' name='city' placeholder='City')
+      input(type='text' name='state' placeholder='State')
+      input(type='submit' value='submit')
+    p.success
 
-script(src='/lib/jquery.min.js')
-script(src='/javascripts/index.js')
+  div.right
+    button.admin Admin Access
+  script(src='jquery.min.js')
+  script(src='/javascripts/scripts.js')

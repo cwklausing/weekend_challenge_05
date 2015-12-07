@@ -1,13 +1,18 @@
 var express = require('express');
 var router = express.Router();
+//require mongo
 var mongo = require('../data/mongo');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  console.log('Is the get request getting through?');
-  var applicantArray = [];
-  applicantArray.push(req.body);
-  var results = mongo.applicants.insert(applicantArray);
+router.post('/', function(req, res) {
+  var applicant = req.body;
+  console.log('applicant:', applicant);
+  //console.log('after converted to person', personObject);
+
+  //when the user route is requested, post the request body
+  //to the applicants collection in the mongo database.
+  var results = mongo.applicants.insert(applicant);
+  console.log(results);
   res.send(results);
 });
 

@@ -3,6 +3,19 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+div.left {
+  display: inline;
+  width: 50%;
+  float: left;
+}
+
+div.right {
+  display: inline;
+  width: 50%;
+  float: right;
+  text-align: right;
+}
+
 a {
   color: #00B7FF;
 }
